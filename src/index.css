@@ -1,37 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playball&display=swap");
 @import "tailwindcss";
+/* 
+@theme {
+  -color--primaryDarkred: #6a0307;
+  -color--primary-red: #820308;
+  -color--primary-bg: #f8f8f8;
+  -color--white: #ffffff;
+  -color--sec-white: #cdcdcd;
+} */
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+.perspective {
+  perspective: 1000px;
+}
+
+.faculty-img-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+@layer utilities {
+  .m-width {
+    @apply max-w-[1400px];
+  }
+  /* .reveal {
+    @apply transition-all duration-300 group-hover:shadow-[10px_10px_0px_0px_rgba(170,17,23,1)];
+  } */
+
+  .section-px {
+    @apply px-4 md:px-8 lg:px-14;
+  }
+  .section-py {
+    @apply py-4 md:px-8 lg:py-14;
+  }
+
+  .large-text {
+    @apply text-3xl lg:text-5xl;
+  }
+  .medium-text {
+    @apply text-xl lg:text-2xl;
+  }
+  .small-text {
+    @apply text-lg lg:text-xl;
+  }
+}
+
+@layer components {
+  .card {
+    @apply max-w-[1400px];
+  }
+}
+
+.cursive-text {
+  font-family: "Playball", serif;
   font-weight: 400;
+  font-style: normal;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+.banner-overlay {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    107deg,
+    rgba(0, 0, 0, 0.5158438375350141) 0%,
+    rgba(25, 16, 16, 0.5074404761904762) 28%,
+    rgba(133, 21, 21, 0.5102415966386555) 67%,
+    rgba(163, 0, 0, 0.5046393557422969) 100%
+  );
+}
+.programs-bg {
+}
+.programs-bg {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.753) 0%,
+      rgba(163, 0, 0, 0.616) 100%
+    ),
+    url("/programs-bg1.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+}
+.faculty-bg {
+  background-image: url("/faculty-bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.reveal-shadow {
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(170, 17, 23, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(170, 17, 23, 1);
+  box-shadow: 10px 10px 0px 0px rgba(170, 17, 23, 1);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Lato", serif;
+  background-color: #f8f8f8;
+  /* display: flex;
+  place-items: center; */
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@media screen and (max-width: 950px) {
 }
