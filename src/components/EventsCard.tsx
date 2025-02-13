@@ -20,7 +20,7 @@ const EventsCard: React.FC<EventCardProps> = ({
     <div
       className={`relative mx-auto mb-10 cursor-pointer group  ${
         imgType === "Portrait"
-          ? " col-span-1 md:col-span-3"
+          ? " col-span-2 md:col-span-3"
           : "col-span-2 md:col-span-6"
       }`}
     >
