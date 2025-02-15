@@ -7,8 +7,8 @@ interface FacultyCardProps {
 
 const FacultyCard: React.FC<FacultyCardProps> = ({ faculty }) => {
   return (
-    <div className="group col-span-3 mt-24 md:col-span-1 relative flex flex-col items-center">
-      <div className="absolute top-[-40%] left-1/2 transform -translate-x-1/2 flex justify-center w-[160px] h-[160px]">
+    <div className="group h-full col-span-3 mt-24 md:col-span-1 relative flex flex-col items-center">
+      <div className="absolute top-[-30%] left-1/2 transform -translate-x-1/2 flex justify-center w-[160px] h-[160px]">
         <img
           className="border-4 w-full border-solid border-green-900 rounded-full object-cover"
           src={faculty.imgSrc.url}

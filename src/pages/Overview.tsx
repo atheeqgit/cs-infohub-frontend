@@ -1,79 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import EventsCard from "../components/EventsCard";
-import { eventsData, FacultyData, infrastructureData } from "../mockData";
+import { eventsData, infrastructureData } from "../mockData";
 import FacultyCard from "../components/FacultyCard";
 import InfrastructureCard from "../components/InfrastructureCard";
 import { useGlobalContext } from "../context";
-import Navbar from "../components/Navbar";
 
-const Home = () => {
-  const { departmentData, loading } = useGlobalContext();
-  return loading ? (
-    <h1>Loading.....</h1>
-  ) : (
-    <div className="max-width w-full">
-      <Navbar />
-      <section className="banner relative mb-10">
-        {/* Banner Image and Overlay */}
-        <div className="w-full h-[40vh] md:h-[60vh] relative z-[10]">
-          <img
-            src="/banner1.png"
-            className="w-full h-[40vh] md:h-[60vh] object-cover"
-            alt="Department Banner"
-          />
-          <div className="section-px banner-overlay absolute top-0 left-0 w-full h-full flex flex-col md:flex-row justify-center items-start md:items-center">
-            {/* Department Name */}
-            <div className="flex-1 flex flex-col text-white justify-center items-start text-left">
-              <h1 className="large-text font-medium cursive-text mb-1">
-                Department of -
-              </h1>
-              <h1 className="large-text uppercase font-bold">
-                {departmentData?.deptName || "Loading..."}
-              </h1>
-            </div>
+const Overview = () => {
+  const { departmentData } = useGlobalContext();
 
-            {/* Logo */}
-            <div className=" hidden md:flex flex-1  justify-center items-center">
-              <img
-                className="w-[60%] object-cover"
-                src="/logo.png"
-                alt="Department Logo"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Bar */}
-        <div className="bg-white absolute bottom-[-11%] left-[50%] transform translate-x-[-50%] w-[90%] lg:w-[70%] flex flex-row justify-between items-center rounded-xl overflow-x-auto text-nowrap gap-1 p-1 md:p-2 md:gap-2 z-[20]">
-          <div className="nav-btns  nav-btns-active ">Overview</div>
-          {["about", "events", "gallery", "E-content"].map((item) => (
-            <div key={item} className="nav-btns">
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* <section className="w-full p-8 flex flex-row   justify-center items-center bg-red-800">
-        <div className="flex-1 flex flex-col text-white  justify-center items-center border-r-2 border-solid border-white">
-          <h1 className="capitalize large-text font-semibold">
-            {departmentData?.snippetData.studentsCount}+
-          </h1>
-          <h1 className="capitalize text-xl font-medium">Students</h1>
-        </div>
-        <div className="flex-1 flex flex-col text-white  justify-center items-center border-r-2 border-solid border-white">
-          <h1 className="capitalize large-text font-semibold">
-            {departmentData?.snippetData.staffsCount}+
-          </h1>
-          <h1 className="capitalize text-xl font-medium">Staffs</h1>
-        </div>
-        <div className="flex-1 flex flex-col text-white  justify-center items-center">
-          <h1 className="capitalize large-text font-semibold">
-            {departmentData?.snippetData.alumniCount}+
-          </h1>
-          <h1 className="capitalize text-xl font-medium">Aulmni</h1>
-        </div>
-      </section> */}
-
+  return (
+    <>
       <section className="section-px section-py">
         <h1 className="cursive-text text-red-800 large-text mb-4">
           Distinctiveness - about
@@ -91,6 +27,26 @@ const Home = () => {
           <h1 className="text-base mt-2 cursor-pointer text-black hover:text-red-800 w-fit font-bold">
             READ MORE.....
           </h1>
+        </div>
+      </section>
+      <section className="w-full p-8 flex flex-row   justify-center items-center bg-red-800">
+        <div className="flex-1 flex flex-col text-white  justify-center items-center border-r-2 border-solid border-white">
+          <h1 className="capitalize large-text font-semibold">
+            {departmentData?.snippetData.studentsCount}+
+          </h1>
+          <h1 className="capitalize text-xl font-medium">Students</h1>
+        </div>
+        <div className="flex-1 flex flex-col text-white  justify-center items-center border-r-2 border-solid border-white">
+          <h1 className="capitalize large-text font-semibold">
+            {departmentData?.snippetData.staffsCount}+
+          </h1>
+          <h1 className="capitalize text-xl font-medium">Staffs</h1>
+        </div>
+        <div className="flex-1 flex flex-col text-white  justify-center items-center">
+          <h1 className="capitalize large-text font-semibold">
+            {departmentData?.snippetData.alumniCount}+
+          </h1>
+          <h1 className="capitalize text-xl font-medium">Aulmni</h1>
         </div>
       </section>
       <section className="programs-bg section-px section-py w-full flex flex-col gap-20 ">
@@ -127,16 +83,8 @@ const Home = () => {
           Recent Events
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-12  gap-4 p-4">
-          {eventsData.map((event, index) => (
-            <EventsCard
-              key={index}
-              eventTitle={event.eventTitle}
-              date={event.date}
-              eventType={event.eventType}
-              aboutEvent={event.aboutEvent}
-              imgSrc={event.imgSrc}
-              imgType={event.imgType}
-            />
+          {departmentData?.eventsData.map((event, index) => (
+            <EventsCard key={index} event={event} />
           ))}
         </div>
       </section>
@@ -169,8 +117,8 @@ const Home = () => {
           })}
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default Overview;

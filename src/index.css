@@ -33,7 +33,7 @@
   } */
 
   .nav-btns {
-    @apply px-4 py-2 md:py-4 md:px-8 rounded-md text-center bg-white hover:border-2 border-2 border-transparent  hover:border-gray-300 cursor-pointer text-base lg:text-lg w-full capitalize font-medium transition-colors;
+    @apply px-4 py-2 md:py-3 md:px-7 rounded-md text-center bg-white hover:border-2 border-2 border-transparent  hover:border-red-800 cursor-pointer text-base lg:text-lg w-full capitalize font-medium transition-colors;
   }
 
   .nav-btns-active {
@@ -69,7 +69,10 @@
   font-weight: 400;
   font-style: normal;
 }
-
+.nav-bar-links {
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 65% 0);
+  clip-path: polygon(0 0, 20% 100%, 100% 100%, 100% 0, 0 0);
+}
 .banner-overlay {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -109,7 +112,7 @@
 body {
   margin: 0;
   font-family: "Lato", serif;
-  background-color: #f8f8f8;
+  background-color: #eef1fa;
   /* display: flex;
   place-items: center; */
 }
