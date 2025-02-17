@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import InfoBanner from "../components/InfoBanner";
+import LoadingScreen from "../components/LoadingScreen";
+import Footer from "../components/Footer";
 
 const HomeLayout = () => {
   const { departmentData, loading } = useGlobalContext();
@@ -44,7 +46,7 @@ const HomeLayout = () => {
   }, [location.pathname, departmentData]);
 
   return loading ? (
-    <h1>Loading.....</h1>
+    <LoadingScreen />
   ) : (
     <div className="max-width w-full">
       <section className="banner relative mb-10">
@@ -125,6 +127,7 @@ const HomeLayout = () => {
         </div>
       </section>
       <Outlet />
+      <Footer />
     </div>
   );
 };

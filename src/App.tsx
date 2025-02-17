@@ -7,12 +7,14 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Faculty from "./pages/Faculty";
 import Events from "./pages/Events";
+import ScrollToTop from "./components/ScroolToTop";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route path="" element={<HomeLayout />}>
             <Route index element={<Overview />} />

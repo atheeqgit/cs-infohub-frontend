@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { DepartmentType, FacultyType, EventType } from "./types";
 
+const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:8000/api";
+
 interface GlobalContextType {
   departmentData: DepartmentType | null;
   setDepartmentData: React.Dispatch<
@@ -39,7 +41,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
   const getDepartmentData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/department/home/computer-science" // Add protocol
+        `${baseUrl}/department/home/computer-science` // Add protocol
       );
 
       console.log(response.data);
@@ -59,7 +61,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
   const getAllFacultyData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/department/getAllData/${ParamDeptId}/facultyData` // Add protocol
+        `${baseUrl}/department/getAllData/${ParamDeptId}/facultyData` // Add protocol
       );
       setAllFacultyData(response.data.facultyData);
     } catch (err) {
@@ -72,7 +74,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
   const getAllEventsData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/department/getAllData/${ParamDeptId}/eventsData` // Add protocol
+        baseUrl + `/department/getAllData/${ParamDeptId}/eventsData` // Add protocol
       );
       setAllEventsData(response.data.eventsData);
     } catch (err) {

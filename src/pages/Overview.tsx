@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import EventsCard from "../components/EventsCard";
-import { eventsData, infrastructureData } from "../mockData";
+import { infrastructureData } from "../mockData";
 import FacultyCard from "../components/FacultyCard";
 import InfrastructureCard from "../components/InfrastructureCard";
 import { useGlobalContext } from "../context";
+import TitleText from "../components/TitleText";
+import { NavLink } from "react-router-dom";
+import NavLinkBtn from "../components/NavLinkBtn";
+import CountUp from "react-countup";
 
 const Overview = () => {
   const { departmentData } = useGlobalContext();
 
   return (
     <>
-      <section className="section-px section-py">
-        <h1 className="cursive-text text-red-800 large-text mb-4">
-          Distinctiveness - about
-        </h1>
+      <section className="section-px section-py" id="about">
+        <TitleText title="Distinctiveness" />
         <div className="pl-10 ">
           {departmentData?.about.slice(0, 2).map((data) => {
             return (
@@ -24,35 +26,59 @@ const Overview = () => {
               </p>
             );
           })}
-          <h1 className="text-base mt-2 cursor-pointer text-black hover:text-red-800 w-fit font-bold">
-            READ MORE.....
-          </h1>
+          <NavLink to="/about">
+            <h1 className="text-base mt-2 cursor-pointer text-black hover:text-red-800 w-fit font-bold">
+              READ MORE.....
+            </h1>
+          </NavLink>
         </div>
       </section>
       <section className="w-full p-8 flex flex-row   justify-center items-center bg-red-800">
         <div className="flex-1 flex flex-col text-white  justify-center items-center border-r-2 border-solid border-white">
           <h1 className="capitalize large-text font-semibold">
-            {departmentData?.snippetData.studentsCount}+
+            <CountUp
+              end={departmentData?.snippetData.studentsCount || 0}
+              enableScrollSpy={true}
+              scrollSpyDelay={300}
+              duration={4}
+              scrollSpyOnce={true}
+            />
+            +
           </h1>
           <h1 className="capitalize text-xl font-medium">Students</h1>
         </div>
         <div className="flex-1 flex flex-col text-white  justify-center items-center border-r-2 border-solid border-white">
           <h1 className="capitalize large-text font-semibold">
-            {departmentData?.snippetData.staffsCount}+
+            <CountUp
+              end={departmentData?.snippetData.staffsCount || 0}
+              enableScrollSpy={true}
+              scrollSpyDelay={300}
+              duration={4}
+              scrollSpyOnce={true}
+            />
+            +
           </h1>
           <h1 className="capitalize text-xl font-medium">Staffs</h1>
         </div>
         <div className="flex-1 flex flex-col text-white  justify-center items-center">
           <h1 className="capitalize large-text font-semibold">
-            {departmentData?.snippetData.alumniCount}+
+            <CountUp
+              end={departmentData?.snippetData.alumniCount || 0}
+              enableScrollSpy={true}
+              scrollSpyDelay={400}
+              duration={4}
+              scrollSpyOnce={true}
+            />
+            +
           </h1>
           <h1 className="capitalize text-xl font-medium">Aulmni</h1>
         </div>
       </section>
-      <section className="programs-bg section-px section-py w-full flex flex-col gap-20 ">
-        <h1 className="cursive-text text-white large-text mb-4">
-          programmes offered
-        </h1>
+      <section
+        id="programs"
+        className="programs-bg section-px section-py w-full flex flex-col gap-20 "
+      >
+        <TitleText title="programmes offered" color="text-white" />
         {departmentData?.programsData?.map((program) => {
           return (
             <div className="flex flex-col md:flex-row items-center justify-center gap-2 ">
@@ -78,18 +104,24 @@ const Overview = () => {
           );
         })}
       </section>
-      <section className="section-px section-py flex flex-col gap-6">
-        <h1 className="cursive-text text-red-800 large-text mb-4">
-          Recent Events
-        </h1>
+
+      <section
+        id="events"
+        className="section-px section-py flex flex-col gap-6"
+      >
+        <TitleText title="Recent Events" />
         <div className="grid grid-cols-2 md:grid-cols-12  gap-4 p-4">
           {departmentData?.eventsData.map((event, index) => (
             <EventsCard key={index} event={event} />
           ))}
         </div>
+        <NavLinkBtn text="View all Events" toLink="/events" />
       </section>
-      <section className="faculty-bg section-px section-py flex flex-col gap-6">
-        <h1 className="cursive-text text-red-800 large-text mb-4">Faculty</h1>
+      <section
+        id="faculty"
+        className="faculty-bg section-px section-py flex flex-col gap-6"
+      >
+        <TitleText title="Faculty" />
         <div className="grid grid-cols-3 gap-4 p-4">
           {departmentData?.facultyData.map((faculty, index) => (
             <FacultyCard
@@ -98,11 +130,13 @@ const Overview = () => {
             />
           ))}
         </div>
+        <NavLinkBtn text="View all faculty" toLink="/faculty" />
       </section>
-      <section className="section-px section-py flex flex-col gap-6">
-        <h1 className="cursive-text text-red-800 large-text mb-4">
-          Infrastructure
-        </h1>
+      <section
+        id="infrastructure"
+        className="section-px section-py flex flex-col gap-6"
+      >
+        <TitleText title="Infrastructure" />
         <div className="grid grid-cols-2   gap-4 p-4">
           {infrastructureData.map((infra, index) => {
             return (
