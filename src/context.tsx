@@ -2,14 +2,14 @@ import axios from "axios";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { DepartmentType, FacultyType, EventType } from "./types";
 
-const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:8000/api";
-
 interface GlobalContextType {
   departmentData: DepartmentType | null;
   setDepartmentData: React.Dispatch<
     React.SetStateAction<DepartmentType | null>
   >;
   loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  baseUrl: string;
   allFacultyData: FacultyType[] | null;
   setAllFacultyData: React.Dispatch<React.SetStateAction<FacultyType[] | null>>;
   allEventsData: EventType[] | null;
@@ -21,6 +21,8 @@ export const Context = createContext<GlobalContextType | null>(null);
 export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:8000/api";
+
   const [departmentData, setDepartmentData] = useState<DepartmentType | null>(
     null
   );
@@ -86,9 +88,11 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <Context.Provider
       value={{
+        baseUrl,
         departmentData,
         setDepartmentData,
         loading,
+        setLoading,
         allFacultyData,
         setAllFacultyData,
         allEventsData,

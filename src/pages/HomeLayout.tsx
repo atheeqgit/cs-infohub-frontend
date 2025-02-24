@@ -4,6 +4,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import InfoBanner from "../components/InfoBanner";
 import LoadingScreen from "../components/LoadingScreen";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const HomeLayout = () => {
   const { departmentData, loading } = useGlobalContext();
@@ -34,7 +35,7 @@ const HomeLayout = () => {
         setCurrentBanner(departmentData?.eventsBG?.url || defaultBanner);
         setCurrentTitle("Recent Events");
         break;
-      case "/E-content":
+      case ``:
         setCurrentBanner(defaultBanner);
         // setCurrentBanner(departmentData?.eContentBG?.url || defaultBanner);
         setCurrentTitle("E-Content");
@@ -49,6 +50,8 @@ const HomeLayout = () => {
     <LoadingScreen />
   ) : (
     <div className="max-width w-full">
+      <Navbar />
+
       <section className="banner relative mb-10">
         {/* Banner Image and Overlay */}
         {location.pathname == "/" ? (
@@ -117,7 +120,7 @@ const HomeLayout = () => {
             recent events
           </NavLink>
           <NavLink
-            to="/E-content"
+            to={`/e-content/${departmentData?._id}/programs`}
             className={({ isActive }) =>
               isActive ? "nav-btns nav-btns-active" : "nav-btns"
             }

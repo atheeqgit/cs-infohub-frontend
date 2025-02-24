@@ -4,6 +4,7 @@ export interface SrcType {
 }
 
 export interface DepartmentType {
+  _id: string;
   pathName: string;
   deptIcon: SrcType;
   deptName: string;
@@ -23,6 +24,7 @@ export interface DepartmentType {
 }
 
 export interface FacultyType {
+  _id: string;
   imgSrc: SrcType;
   name: string;
   designation: string;
@@ -34,6 +36,7 @@ export interface FacultyType {
 }
 
 export interface EventType {
+  _id: string;
   eventTitle: string;
   date: string;
   eventType: string;
@@ -44,10 +47,35 @@ export interface EventType {
   deptID: string;
 }
 export interface ProgramType {
+  _id: string;
   title: string;
   programType: string;
   aboutProgram: string[];
   deptID: string;
+  totalSemesters: number;
+}
+
+export interface EcontentType {
+  _id: string;
+  title: string;
+  subjectName: string;
+  subjectCode: string;
+  semester: number;
+  programName: string;
+  programId: string;
+  type: string;
+  files: SrcType[];
+  uploadedBy: string;
+  uploadedAt: string;
+  tags: {
+    type: String;
+    index: true;
+  }[];
+  metadata: {
+    academicYear: string;
+    author: string;
+    institution: string;
+  };
 }
 
 export type UserRole = "admin" | "user";
