@@ -40,11 +40,11 @@ const EcontentCard = ({ Econtent }: propTypes) => {
                       {Econtent.description}
                       </p> */}
               <div className="mt-2 flex items-center text-sm text-gray-500 flex-wrap gap-2">
-                <span>Course: {Econtent.programName}</span>
+                <span>subject: {Econtent.subjectName}</span>
                 <span>•</span>
-                {/* <span>{Econtent.department}</span>
-                      <span>{Econtent.program}</span> */}
-                {/* <span>•</span> */}
+                <span>Course: {Econtent.programName}</span>
+                {/* <span>{Econtent.program}</span> */}
+                <span>•</span>
                 <span>Semester {Econtent.semester}</span>
                 <span>•</span>
 

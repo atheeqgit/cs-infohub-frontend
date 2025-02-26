@@ -12,7 +12,7 @@ import CountUp from "react-countup";
 const Overview = () => {
   const { departmentData } = useGlobalContext();
 
-  return (
+  return departmentData ? (
     <>
       <section className="section-px section-py" id="about">
         <TitleText title="Distinctiveness" />
@@ -104,7 +104,6 @@ const Overview = () => {
           );
         })}
       </section>
-
       <section
         id="events"
         className="section-px section-py flex flex-col gap-6"
@@ -152,6 +151,8 @@ const Overview = () => {
         </div>
       </section>
     </>
+  ) : (
+    <h1> some error has occured</h1>
   );
 };
 

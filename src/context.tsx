@@ -54,6 +54,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
         eventsData: response.data.data.eventsData,
       });
     } catch (err) {
+      setDepartmentData(null);
       console.error("department Request failed:", err);
     } finally {
       setLoading(false);

@@ -59,60 +59,60 @@ export const eventsData = [
 ];
 
 export const infrastructureData = [
-  {
-    imgSrc: "/banner1.png",
-    code: "LAB101",
-    name: "Computer Science Lab",
-    about: [
-      "Equipped with modern computers and high-speed internet.",
-      "Used for programming, data structures, and AI research.",
-      "Equipped with modern computers and high-speed internet.",
-      "Used for programming, data structures, and AI research.",
-      "Equipped with modern computers and high-speed internet.",
-      "Used for programming, data structures, and AI research.",
-      "Equipped with modern computers and high-speed internet.",
-      "Used for programming, data structures, and AI research.",
-    ],
-    deptID: "65e3f98d2a5b3c001f2e4d7a", // Example ObjectId
-  },
-  {
-    imgSrc: "/banner1.png",
-    code: "LIB001",
-    name: "Central Library",
-    about: [
-      "Houses over 50,000 books across various disciplines.",
-      "Provides digital resources and study areas.",
-    ],
-    deptID: "65e3fae23b9c5f002a6e8c3b",
-  },
-  {
-    imgSrc: "/banner1.png",
-    code: "AUD202",
-    name: "Main Auditorium",
-    about: [
-      "A fully air-conditioned auditorium with a seating capacity of 500.",
-      "Used for seminars, workshops, and cultural events.",
-    ],
-    deptID: "65e3fb3d9a6d7c003b7f1a8e",
-  },
-  {
-    imgSrc: "/banner1.png",
-    code: "SPRT001",
-    name: "Sports Complex",
-    about: [
-      "Includes football, basketball, and tennis courts.",
-      "State-of-the-art gym and fitness center available.",
-    ],
-    deptID: "65e3fb7e1c2d8d004d5e9f6b",
-  },
-  {
-    imgSrc: "/banner1.png",
-    code: "LAB202",
-    name: "Physics Lab",
-    about: [
-      "Equipped with latest instruments for experiments.",
-      "Supports research in quantum mechanics and optics.",
-    ],
-    deptID: "65e3fbbf2e5a3e005e6d2f7c",
-  },
+  // {
+  //   imgSrc: "/banner1.png",
+  //   code: "LAB101",
+  //   name: "Computer Science Lab",
+  //   about: [
+  //     "Equipped with modern computers and high-speed internet.",
+  //     "Used for programming, data structures, and AI research.",
+  //     "Equipped with modern computers and high-speed internet.",
+  //     "Used for programming, data structures, and AI research.",
+  //     "Equipped with modern computers and high-speed internet.",
+  //     "Used for programming, data structures, and AI research.",
+  //     "Equipped with modern computers and high-speed internet.",
+  //     "Used for programming, data structures, and AI research.",
+  //   ],
+  //   deptID: "65e3f98d2a5b3c001f2e4d7a", // Example ObjectId
+  // },
+  // {
+  //   imgSrc: "/banner1.png",
+  //   code: "LIB001",
+  //   name: "Central Library",
+  //   about: [
+  //     "Houses over 50,000 books across various disciplines.",
+  //     "Provides digital resources and study areas.",
+  //   ],
+  //   deptID: "65e3fae23b9c5f002a6e8c3b",
+  // },
+  // {
+  //   imgSrc: "/banner1.png",
+  //   code: "AUD202",
+  //   name: "Main Auditorium",
+  //   about: [
+  //     "A fully air-conditioned auditorium with a seating capacity of 500.",
+  //     "Used for seminars, workshops, and cultural events.",
+  //   ],
+  //   deptID: "65e3fb3d9a6d7c003b7f1a8e",
+  // },
+  // {
+  //   imgSrc: "/banner1.png",
+  //   code: "SPRT001",
+  //   name: "Sports Complex",
+  //   about: [
+  //     "Includes football, basketball, and tennis courts.",
+  //     "State-of-the-art gym and fitness center available.",
+  //   ],
+  //   deptID: "65e3fb7e1c2d8d004d5e9f6b",
+  // },
+  // {
+  //   imgSrc: "/banner1.png",
+  //   code: "LAB202",
+  //   name: "Physics Lab",
+  //   about: [
+  //     "Equipped with latest instruments for experiments.",
+  //     "Supports research in quantum mechanics and optics.",
+  //   ],
+  //   deptID: "65e3fbbf2e5a3e005e6d2f7c",
+  // },
 ];

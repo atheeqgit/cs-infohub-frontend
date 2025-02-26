@@ -40,7 +40,7 @@ const EcontentLayout = () => {
   };
   return loading ? (
     <LoadingScreen />
-  ) : (
+  ) : departmentData ? (
     <div className="py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
@@ -96,6 +96,11 @@ const EcontentLayout = () => {
           ))}
         </div>
       </div>
+    </div>
+  ) : (
+    <div className="h-[100vh] grid cols-2 place-content-center">
+      {" "}
+      <h1>some error has occured</h1>
     </div>
   );
 };
