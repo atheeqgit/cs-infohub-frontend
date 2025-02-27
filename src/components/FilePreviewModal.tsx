@@ -49,6 +49,7 @@ const FilePreviewModal = ({ files, onClose, title }: FilePreviewModalProps) => {
         <div className="flex flex-col items-center">
           {isPDF ? (
             <iframe
+              loading="lazy"
               src={currentFile.url}
               className="w-full h-[500px] border rounded-md"
             />
@@ -56,6 +57,7 @@ const FilePreviewModal = ({ files, onClose, title }: FilePreviewModalProps) => {
             <img
               src={currentFile.url}
               alt="Preview"
+              loading="lazy"
               className="w-full max-h-[500px] object-contain"
             />
           ) : (

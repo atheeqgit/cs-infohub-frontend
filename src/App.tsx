@@ -1,24 +1,24 @@
-import { useState } from "react";
-import "./App.css";
-import HomeLayout from "./pages/HomeLayout";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
-import Overview from "./pages/Overview";
-import About from "./pages/About";
-import Navbar from "./components/Navbar";
-import Faculty from "./pages/Faculty";
-import Events from "./pages/Events";
-import ScrollToTop from "./components/ScroolToTop";
-import EcontentLayout from "./pages/EcontentLayout";
-import { Programs } from "./pages/Programs";
-import Econtents from "./pages/SearchEcontents";
-import SemEcontents from "./pages/SemEcontents";
-import { Semesters } from "./pages/Semesters";
-import SearchEcontents from "./pages/SearchEcontents";
+import "./App.css";
+import LoadingScreen from "./components/LoadingScreen";
+// Lazy load components
+const HomeLayout = lazy(() => import("./pages/HomeLayout"));
+const Overview = lazy(() => import("./pages/Overview"));
+const About = lazy(() => import("./pages/About"));
+const Faculty = lazy(() => import("./pages/Faculty"));
+const Events = lazy(() => import("./pages/Events"));
+const ScrollToTop = lazy(() => import("./components/ScroolToTop"));
+const EcontentLayout = lazy(() => import("./pages/EcontentLayout"));
+const Programs = lazy(() => import("./pages/Programs"));
+const SemEcontents = lazy(() => import("./pages/SemEcontents"));
+const Semesters = lazy(() => import("./pages/Semesters"));
+const SearchEcontents = lazy(() => import("./pages/SearchEcontents"));
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<LoadingScreen />}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomeLayout />}>
@@ -38,13 +38,9 @@ function App() {
             path="e-content/:programId/sem/:semester"
             element={<SemEcontents />}
           />
-          {/* <Route path="e-content/:programId/sem/:semester" element={<SemEcontents />} /> */}
-
-          {/* <Route path="e-content/:progID/:pageNumber" element={<Econtents />} /> */}
         </Routes>
-        {/* <HtmlForm /> */}
-      </BrowserRouter>
-    </div>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

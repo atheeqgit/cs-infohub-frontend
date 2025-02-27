@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { CalendarDays, ChevronRight } from "lucide-react";
 
-export const Semesters = () => {
+const Semesters = () => {
   const { programId, semesters } = useParams();
 
   const sems = semesters ? Number(semesters) : 0;
@@ -48,3 +48,5 @@ export const Semesters = () => {
     </div>
   );
 };
+
+export default Semesters;

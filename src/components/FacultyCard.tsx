@@ -12,6 +12,7 @@ const FacultyCard: React.FC<FacultyCardProps> = ({ faculty }) => {
         <img
           className="border-4 w-full border-solid border-green-900 rounded-full object-cover"
           src={faculty.imgSrc.url}
+          loading="lazy"
           alt=""
         />
       </div>

@@ -16,7 +16,7 @@ const Overview = () => {
     <>
       <section className="section-px section-py" id="about">
         <TitleText title="Distinctiveness" />
-        <div className="pl-10 ">
+        <div className="px-4  md:pl-10 ">
           {departmentData?.about.slice(0, 2).map((data) => {
             return (
               <p className="text-[16px] font-semibold text-[#444444]">
@@ -95,8 +95,17 @@ const Overview = () => {
                   {program.programType}
                 </h1>
                 <div className="text-[#ffffff] text-base gap-4 flex flex-col ">
-                  {program.aboutProgram.map((data) => {
-                    return <p> {data}</p>;
+                  {program.aboutProgram.map((data, index) => {
+                    return (
+                      <p key={index} className="text-base font-medium ">
+                        {data.split("\n").map((line, index) => (
+                          <React.Fragment key={index}>
+                            {line}
+                            <br />
+                          </React.Fragment>
+                        ))}
+                      </p>
+                    );
                   })}
                 </div>
               </div>
@@ -137,7 +146,7 @@ const Overview = () => {
       >
         <TitleText title="Infrastructure" />
         <div className="grid grid-cols-2   gap-4 p-4">
-          {infrastructureData.map((infra, index) => {
+          {infrastructureData?.map((infra, index) => {
             return (
               <InfrastructureCard
                 key={index}

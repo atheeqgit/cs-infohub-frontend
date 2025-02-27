@@ -38,9 +38,7 @@ const EcontentLayout = () => {
       setLoading(false);
     }
   };
-  return loading ? (
-    <LoadingScreen />
-  ) : departmentData ? (
+  return (
     <div className="py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
@@ -66,41 +64,43 @@ const EcontentLayout = () => {
             </div>
           </div>
         </div>
-
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {departmentData?.map((department, index) => (
-            <Link
-              key={index}
-              to={`/e-content/${department._id}/programs`}
-              className="group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 rounded-lg shadow hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                  <span className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600 group-hover:bg-indigo-200 transition-colors">
-                    <Building2 className="h-6 w-6" />
-                  </span>
+        {loading ? (
+          <LoadingScreen />
+        ) : departmentData ? (
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {departmentData?.map((department, index) => (
+              <Link
+                key={index}
+                to={`/e-content/${department._id}/programs`}
+                className="group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 rounded-lg shadow hover:shadow-lg transition-shadow"
+              >
+                <div className="flex items-center space-x-4">
+                  <div className="flex-shrink-0">
+                    <span className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600 group-hover:bg-indigo-200 transition-colors">
+                      <Building2 className="h-6 w-6" />
+                    </span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg font-medium text-gray-900 group-hover:text-indigo-600 transition-colors">
+                      {department.deptName}
+                    </h2>
+                    <p className="text-sm text-gray-500 line-clamp-2">
+                      {department.about[0].slice(0, 20)}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-indigo-600 transition-colors" />
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-lg font-medium text-gray-900 group-hover:text-indigo-600 transition-colors">
-                    {department.deptName}
-                  </h2>
-                  <p className="text-sm text-gray-500 line-clamp-2">
-                    {department.about[0].slice(0, 20)}
-                  </p>
-                </div>
-                <div className="flex-shrink-0">
-                  <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-indigo-600 transition-colors" />
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="h-[100vh] grid cols-2 place-content-center">
+            <h1>some error has occured</h1>
+          </div>
+        )}
       </div>
-    </div>
-  ) : (
-    <div className="h-[100vh] grid cols-2 place-content-center">
-      {" "}
-      <h1>some error has occured</h1>
     </div>
   );
 };

@@ -50,7 +50,7 @@ const HomeLayout = () => {
     <LoadingScreen />
   ) : (
     <div className="max-width w-full">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="banner relative mb-10">
         {/* Banner Image and Overlay */}
@@ -120,7 +120,8 @@ const HomeLayout = () => {
             recent events
           </NavLink>
           <NavLink
-            to={`/e-content/${departmentData?._id}/programs`}
+            // to={`/e-content/${departmentData?._id}/programs`}
+            to={`/e-content`}
             className={({ isActive }) =>
               isActive ? "nav-btns nav-btns-active" : "nav-btns"
             }

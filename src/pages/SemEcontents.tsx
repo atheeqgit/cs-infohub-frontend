@@ -42,14 +42,14 @@ const SemEcontents = () => {
     }
   };
 
-  return loading ? (
-    <LoadingScreen />
-  ) : (
+  return (
     <div className="py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="sm:flex-auto">
-            <h1 className="text-3xl font-bold text-gray-900">Content</h1>
+            <h1 className="text-3xl font-bold text-gray-900">
+              Sem {semester} E-content
+            </h1>
             <p className="mt-2 text-sm text-gray-700">
               Access your course materials and resources
             </p>
@@ -69,7 +69,9 @@ const SemEcontents = () => {
             </div>
           </div>
         </div>
-        {filteredContent?.length ? (
+        {loading ? (
+          <LoadingScreen />
+        ) : filteredContent?.length ? (
           <div className="mt-6 grid grid-cols-12 gap-6">
             {filteredContent.map((item) => (
               <EcontentCard Econtent={item} />

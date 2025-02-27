@@ -17,6 +17,7 @@ const EventsCard: React.FC<EventCardProps> = ({ event }) => {
       <div className=" relative w-full h-full border border-gray-500 overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 ">
         <img
           src={event.imgSrc.url}
+          loading="lazy"
           className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105  "
           alt={event.eventTitle}
         />
