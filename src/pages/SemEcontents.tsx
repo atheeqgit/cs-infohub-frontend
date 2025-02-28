@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { File, Search, ChevronLeft, ChevronRight } from "lucide-react";
+// import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+// import { File, Search, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search } from "lucide-react";
 import axios from "axios";
 import { useGlobalContext } from "../context";
 import LoadingScreen from "../components/LoadingScreen";

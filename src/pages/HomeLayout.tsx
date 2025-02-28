@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import InfoBanner from "../components/InfoBanner";
 import LoadingScreen from "../components/LoadingScreen";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 
 const HomeLayout = () => {
   const { departmentData, loading } = useGlobalContext();

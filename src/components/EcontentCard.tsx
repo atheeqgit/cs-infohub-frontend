@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { EcontentType } from "../types/deptTypes";
-import { File, Eye, Download } from "lucide-react";
-import FilePreviewModal from "./FilePreviewModal"; // Import modal
+import { File, Eye } from "lucide-react";
+import FilePreviewModal from "./FilePreviewModal";
 
 interface propTypes {
   Econtent: EcontentType;
@@ -10,7 +10,7 @@ interface propTypes {
 const EcontentCard = ({ Econtent }: propTypes) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (index: number) => {
+  const openModal = () => {
     setIsModalOpen(true);
   };
 
@@ -64,7 +64,7 @@ const EcontentCard = ({ Econtent }: propTypes) => {
 
             {/* Preview Button (Opens Modal) */}
             <button
-              onClick={() => openModal(1)}
+              onClick={() => openModal()}
               className="flex items-center px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700"
             >
               <Eye className="h-4 w-4 mr-1" />

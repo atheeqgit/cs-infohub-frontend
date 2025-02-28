@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import EventsCard from "../components/EventsCard";
 import { infrastructureData } from "../mockData";
 import FacultyCard from "../components/FacultyCard";

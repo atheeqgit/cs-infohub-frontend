@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface FilePreviewModalProps {
   files: { url: string; public_id: string }[];

@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { Link, useParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight, SearchIcon, Filter, X } from "lucide-react";
 import axios from "axios";
 import { useGlobalContext } from "../context";
@@ -21,7 +21,7 @@ const SearchEcontents = () => {
 
   const [searched, setSearched] = useState<boolean>(false);
 
-  const [limit, setLimit] = useState<number>(20);
+  const [limit, _] = useState<number>(20);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [showFilters, setShowFilters] = useState(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
