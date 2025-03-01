@@ -20,8 +20,9 @@ const Semesters = () => {
           </div>
         </div>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {semArray.map((semester) => (
+          {semArray.map((semester, idx) => (
             <Link
+              key={idx}
               to={`/e-content/${programId}/sem/${semester}`}
               className="group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 rounded-lg shadow hover:shadow-lg transition-shadow"
             >

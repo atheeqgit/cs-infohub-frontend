@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { Link, useParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight, SearchIcon, Filter, X } from "lucide-react";
 import axios from "axios";
 import { useGlobalContext } from "../context";
@@ -38,6 +37,7 @@ const SearchEcontents = () => {
     if (!searchQuery.trim()) return;
     setSearched(true);
     setIsLoading(true);
+    resetFilters();
 
     try {
       const encodedQuery = encodeURIComponent(searchQuery);
@@ -138,7 +138,7 @@ const SearchEcontents = () => {
             </form>
             <div className="flex flex-row space-x-4">
               <select
-                className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 capitalize"
                 onChange={(e) => {
                   setSearchFilter(e.target.value);
                 }}
@@ -154,7 +154,7 @@ const SearchEcontents = () => {
                   subject Code
                 </option>
                 <option value="programName" className="capitalize">
-                  Course Code
+                  Course Name
                 </option>
               </select>
 

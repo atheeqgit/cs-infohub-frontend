@@ -47,8 +47,8 @@ const SemEcontents = () => {
   return (
     <div className="py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <div className="sm:flex-auto">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+          <div className="flex-col">
             <h1 className="text-3xl font-bold text-gray-900">
               Sem {semester} E-content
             </h1>
@@ -56,7 +56,7 @@ const SemEcontents = () => {
               Access your course materials and resources
             </p>
           </div>
-          <div className="mt-4 sm:mt-0 sm:flex-none">
+          <div className="mt-4 sm:mt-0 sm:flex-none w-full md:w-[40%]">
             <div className="relative">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 <Search className="h-5 w-5 text-gray-400" />

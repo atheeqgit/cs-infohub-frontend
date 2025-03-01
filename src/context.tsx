@@ -46,7 +46,6 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
         `${baseUrl}/department/home/computer-science` // Add protocol
       );
 
-      console.log(response.data);
       setDepartmentData({
         ...response.data.data.department,
         facultyData: response.data.data.facultyData,

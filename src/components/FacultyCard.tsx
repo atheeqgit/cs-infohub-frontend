@@ -7,7 +7,10 @@ interface FacultyCardProps {
 
 const FacultyCard: React.FC<FacultyCardProps> = ({ faculty }) => {
   return (
-    <div className="group h-full col-span-3 mt-32 md:col-span-1 relative flex flex-col items-center">
+    <div
+      tabIndex={0}
+      className="group h-full col-span-3 mt-32 md:col-span-1 relative flex flex-col items-center"
+    >
       <div className="absolute top-[-25%] left-1/2 transform -translate-x-1/2 flex justify-center w-[160px] h-[160px]">
         <img
           className="border-4 w-full border-solid border-green-900 rounded-full object-cover"
@@ -17,7 +20,7 @@ const FacultyCard: React.FC<FacultyCardProps> = ({ faculty }) => {
         />
       </div>
 
-      <div className="bg-white border pt-20 border-solid border-[#ccc] rounded-xl flex-[0.7] flex flex-col w-full  px-4  gap-2 transition-all duration-300 group-hover:shadow-[7px_7px_0px_0px_rgba(170,17,23,1)]">
+      <div className="bg-white border pt-20 border-solid border-[#ccc] rounded-xl flex-[0.7] flex flex-col w-full  px-4  gap-2 transition-all duration-300 group-hover:shadow-[7px_7px_0px_0px_rgba(170,17,23,1)] group-focus:shadow-[7px_7px_0px_0px_rgba(170,17,23,1)]">
         <h1 className="small-text font-extrabold text-red-800 uppercase">
           {faculty.name}
         </h1>

@@ -9,10 +9,10 @@ const About = lazy(() => import("./pages/About"));
 const Faculty = lazy(() => import("./pages/Faculty"));
 const Events = lazy(() => import("./pages/Events"));
 const ScrollToTop = lazy(() => import("./components/ScroolToTop"));
-const EcontentLayout = lazy(() => import("./pages/EcontentLayout"));
-const Programs = lazy(() => import("./pages/Programs"));
+const SelectDepartment = lazy(() => import("./pages/SelectDepartment"));
+const Programs = lazy(() => import("./pages/SelectPrograms"));
 const SemEcontents = lazy(() => import("./pages/SemEcontents"));
-const Semesters = lazy(() => import("./pages/Semesters"));
+const Semesters = lazy(() => import("./pages/SelectSemesters"));
 const SearchEcontents = lazy(() => import("./pages/SearchEcontents"));
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             <Route path="faculty" element={<Faculty />} />
             <Route path="events" element={<Events />} />
           </Route>
-          <Route path="e-content" element={<EcontentLayout />} />
+          <Route path="e-content" element={<SelectDepartment />} />
           <Route path="e-content/search" element={<SearchEcontents />} />
           <Route path="e-content/:deptID/programs" element={<Programs />} />
           <Route
